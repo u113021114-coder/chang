@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>韓國代購7/24-7/31</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Noto Sans TC',sans-serif;
+    background:linear-gradient(180deg,#F8F5F1,#EFE7DF);
+}
+
+.container{
+    max-width:400px;
+    margin:40px auto;
+    padding:25px;
+}
+
+.card{
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    position:relative;
+    overflow:hidden;
+}
+
+/* 藤蔓裝飾 */
+.card:before{
+    content:"🌿";
+    position:absolute;
+    top:-10px;
+    left:-5px;
+    font-size:55px;
+    opacity:0.7;
+}
+
+.card:after{
+    content:"🌿";
+    position:absolute;
+    bottom:-10px;
+    right:-5px;
+    font-size:55px;
+    transform:rotate(180deg);
+    opacity:0.7;
+}
+
+
+.logo{
+    text-align:center;
+    font-size:36px;
+}
+
+
+h1{
+    text-align:center;
+    color:#6C584C;
+    margin:10px 0 8px;
+    font-size:26px;
+}
+
+
+.brand{
+    text-align:center;
+    color:#B08968;
+    letter-spacing:3px;
+    margin-bottom:25px;
+}
+
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#666;
+}
+
+
+input{
+
+    width:100%;
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #ddd;
+    font-size:18px;
+    box-sizing:border-box;
+
+}
+
+
+button{
+
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:#B08968;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+    background:#9A7555;
+}
+
+
+.result{
+
+    margin-top:30px;
+    background:#FAF6F2;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+
+}
+
+
+.price{
+
+    font-size:36px;
+    color:#8B5E3C;
+    font-weight:bold;
+    margin-top:10px;
+
+}
+
+
+.info{
+
+    margin-top:20px;
+    color:#888;
+    font-size:14px;
+    line-height:1.8;
+
+}
+
+
+.footer{
+
+    text-align:center;
+    margin-top:30px;
+    color:#999;
+    font-size:13px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<div class="card">
+
+
+<div class="logo">🇰🇷</div>
+
+
+<h1>
+韓國代購7/24-7/31
+</h1>
+
+
+<div class="brand">
+KOREA ORDER
+</div>
+
+
+
+<label>
+商品韓元價格（₩）
+</label>
+
+
+<input
+type="number"
+id="krw"
+placeholder="例如：50000">
+
+
+
+<button onclick="calculate()">
+立即計算
+</button>
+
+
+
+
+<div class="result">
+
+<div>
+💰 應付金額
+</div>
+
+
+<div class="price" id="price">
+NT$0
+</div>
+
+
+</div>
+
+
+
+
+<div class="info">
+
+✔ 匯率：44.5<br>
+✔ 已含10%代購服務費<br>
+✔ 計算方式：韓元 ÷ 44.5 × 1.1
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+© TingChen Chang
+</div>
+
+
+</div>
+
+
+
+<script>
+
+function calculate(){
+
+let krw=document.getElementById("krw").value;
+
+
+if(krw==""){
+
+alert("請輸入韓元價格");
+return;
+
+}
+
+
+let twd=(krw/44.5)*1.10;
+
+
+document.getElementById("price").innerHTML=
+
+"NT$"+Math.round(twd).toLocaleString();
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
